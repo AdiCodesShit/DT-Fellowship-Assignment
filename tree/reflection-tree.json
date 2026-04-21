@@ -1,0 +1,161 @@
+{
+  "nodes": [
+    {
+      "id": "START",
+      "type": "start",
+      "text": "Good evening. After a long day lets review how it went.",
+      "next": "A1_OPEN"
+    },
+
+    {
+      "id": "A1_OPEN",
+      "type": "question",
+      "text": "How do you feel your overall day went?",
+      "options": [
+        { "text": "Productive", "next": "A1_Q1" },
+        { "text": "Mixed", "next": "A1_Q1" },
+        { "text": "Frustrating", "next": "A1_Q2" },
+        { "text": "Draining", "next": "A1_Q2" }
+      ]
+    },
+
+    {
+      "id": "A1_Q1",
+      "type": "question",
+      "text": "Thats Good! What do you feel Went the best today? ",
+      "options": [
+        { "text": "I Was all planned and prepared", "signal": ["axis1:internal"] },
+        { "text": "My team supported well", "signal": ["axis1:internal"] },
+        { "text": "Things just worked out", "signal": ["axis1:external"] },
+        { "text": "I adapted quickly", "signal": ["axis1:internal"] }
+      ],
+      "next": "A1_Q3"
+    },
+
+    {
+      "id": "A1_Q2",
+      "type": "question",
+      "text": "Oh, What did you do when things didn't go well?",
+      "options": [
+        { "text": "Looked for what I could control", "signal": ["axis1:internal"] },
+        { "text": "Waited for someone to fix it", "signal": ["axis1:external"] },
+        { "text": "Push through It alone", "signal": ["axis1:internal"] },
+        { "text": "Felt stuck", "signal": ["axis1:external"] }
+      ],
+      "next": "A1_Q3"
+    },
+
+    {
+      "id": "A1_Q3",
+      "type": "question",
+      "text": "When facing a challenge, what did you focus on?",
+      "options": [
+        { "text": "What I can do next", "signal": ["axis1:internal"] },
+        { "text": "Why this is happening to me", "signal": ["axis1:external"] },
+        { "text": "How Can I get away from it?", "signal": ["axis1:internal"] },
+        { "text": "Who is responsible for the problem", "signal": ["axis1:external"] }
+      ],
+      "next": "A1_REFLECT"
+    },
+
+    {
+      "id": "A1_REFLECT",
+      "type": "reflection",
+      "text": "Notice how you approached control today. Some moments showed ownership, others may have felt outside your control. Awareness of this balance is the first step to shifting it.",
+      "next": "BRIDGE_1_2"
+    },
+
+    {
+      "id": "BRIDGE_1_2",
+      "type": "bridge",
+      "text": "Let’s shift from how you handled situations to what you contributed.",
+      "next": "A2_Q1"
+    },
+
+    {
+      "id": "A2_Q1",
+      "type": "question",
+      "text": "Which moment you feel standed out most today?",
+      "options": [
+        { "text": "I helped someone without being asked", "signal": ["axis2:contribution"] },
+        { "text": "I did my work as expected", "signal": ["axis2:neutral"] },
+        { "text": "I felt I deserved more Appriciation", "signal": ["axis2:entitlement"] },
+        { "text": "I noticed others not contributing enough", "signal": ["axis2:entitlement"] }
+      ],
+      "next": "A2_Q2"
+    },
+
+    {
+      "id": "A2_Q2",
+      "type": "question",
+      "text": "What motivated your actions most today?",
+      "options": [
+        { "text": "Helping the team succeed", "signal": ["axis2:contribution"] },
+        { "text": "Completing my responsibilities", "signal": ["axis2:neutral"] },
+        { "text": "Getting Praised/Appriciated", "signal": ["axis2:entitlement"] },
+        { "text": "Avoiding problems", "signal": ["axis2:neutral"] }
+      ],
+      "next": "A2_REFLECT"
+    },
+
+    {
+      "id": "A2_REFLECT",
+      "type": "reflection",
+      "text": "Think about where your focus was today — on giving or receiving. prioritising giving over receiving is is appriciable in itself.",
+      "next": "BRIDGE_2_3"
+    },
+
+    {
+      "id": "BRIDGE_2_3",
+      "type": "bridge",
+      "text": "Now, let’s widen the lens beyond just yourself.",
+      "next": "A3_Q1"
+    },
+
+    {
+      "id": "A3_Q1",
+      "type": "question",
+      "text": "When you think about today’s challenges, who comes to mind?",
+      "options": [
+        { "text": "Just me", "signal": ["axis3:self"] },
+        { "text": "My team", "signal": ["axis3:others"] },
+        { "text": "A colleague", "signal": ["axis3:others"] },
+        { "text": "The customer or user", "signal": ["axis3:others"] }
+      ],
+      "next": "A3_Q2"
+    },
+
+    {
+      "id": "A3_Q2",
+      "type": "question",
+      "text": "What influenced your decisions most today?",
+      "options": [
+        { "text": "My workload", "signal": ["axis3:self"] },
+        { "text": "Team goals", "signal": ["axis3:others"] },
+        { "text": "Helping someone", "signal": ["axis3:others"] },
+        { "text": "User impact", "signal": ["axis3:others"] }
+      ],
+      "next": "A3_REFLECT"
+    },
+
+    {
+      "id": "A3_REFLECT",
+      "type": "reflection",
+      "text": "Your perspective shapes your experience, And expanding you perspective to include others always bring more clarity, connection and meaning.",
+      "next": "SUMMARY"
+    },
+
+    {
+      "id": "SUMMARY",
+      "type": "summary",
+      "text": "Today’s reflection shows patterns in ownership, contribution, and perspective. Making sure that your problem/happiness is yours to experience is a great way of handling the day. Your contribution towards your team also results in a happy day.",
+      "next": "END"
+    },
+
+    {
+      "id": "END",
+      "type": "end",
+      "text": "You always have a chance to make the 'tommorow' better than 'today', So see you tommorow!. "
+    }
+  ]
+}
